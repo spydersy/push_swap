@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 22:19:53 by abelarif          #+#    #+#             */
-/*   Updated: 2021/04/24 22:32:01 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/04/26 16:54:36 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void    ft_error(char *str)
     exit(EXIT_FAILURE);
 }
 
-char     **get_content(char *argv[])
+char    **get_content(char *argv[])
 {
     int     i;
     char    *str;
@@ -126,18 +126,6 @@ int     main(int argc, char *argv[])
             free(content[i]);
 	    }
         init_stacks(&a, &b, size);
-        print_stack(a, b);
-        swap(&a, &b, 1);
-        
-        printf("\n\n--------------------------------------\n\n");
-        print_stack(a, b);
-        printf("\n\n--------------------------------------\n\n");
-        
-        push(&a, &b, 2);
-        print_stack(a, b);
-
-        push(&a, &b, 2);
-        print_stack(a, b);
 
         free(content);
         free(a.stack);

@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 22:19:04 by abelarif          #+#    #+#             */
-/*   Updated: 2021/04/24 22:24:31 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/04/25 20:51:35 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,6 @@
 #include <stdio.h>
 #include "../libft/libft.h"
 
-// typedef struct          s_stack
-// {
-        // int             nbr;
-        // struct  s_stack *next;
-        
-// }                       t_stack;
-
 typedef struct          s_stack
 {
         int             *stack;
@@ -32,8 +25,9 @@ typedef struct          s_stack
         int             current_size;
 }                       t_stack;
 
+void    ft_error(char *str);
 void    swap(t_stack *a, t_stack *b, int flag);
 void    push(t_stack *a, t_stack *b, int flag);
-void    ft_error(char *str);
+void    rotate(t_stack *a, t_stack *b, int flag, int direction);
 
 #endif
