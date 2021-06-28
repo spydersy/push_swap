@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:11:32 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/28 15:12:37 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/06/28 16:12:52 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,22 @@ t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 void	print_list(t_list *list);
 void 	ft_lstadd_front(t_list **lst, t_list *new);
-int		ft_lstsize(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
+int		ft_lstsize(t_list *lst);
+
+void	del(void *element)
+{
+	free(element);
+	element = NULL;
+}
 
 void	print_list(t_list *list)
 {
 	while (list != NULL)
 	{
 		printf("[%s]\n", list->content);
+		// ft_lstdelone(list, del);
 		list = list->next;
 	}
 }
@@ -76,28 +84,27 @@ t_list	*ft_lstlast(t_list *lst)
 	{
 		i++;
 		lst = lst->next;
-		printf("counter : [%d]\n", i);
 	}
 	return (lst);
 }
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while (*lst != NULL)
+	t_list	*tmp;
+
+	tmp = *lst;
+	if (lst == NULL)
+		tmp = new;
+	else
 	{
-		// printf("X\n");
-		if ((*lst)->next == NULL)
-		{
-			printf("X\n");
-			(*lst)->next = new;
-		}
-		else
-		{
-				*lst = (*lst)->next;
-				break ;
-				printf("Y : [%s]\n", (*lst)->content);
-		}
+		tmp = ft_lstlast(*lst);
+		tmp->next = new;
 	}
+}
+
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
+{
+	del(lst->content);
 }
 
 int	main(int argc, char *argv[])
