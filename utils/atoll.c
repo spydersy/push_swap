@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   atoll.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 17:43:08 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/28 20:22:19 by abelarif         ###   ########.fr       */
+/*   Created: 2021/06/28 20:24:01 by abelarif          #+#    #+#             */
+/*   Updated: 2021/06/28 20:30:30 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	push_swap(char *argv[])
+long long	atoll(char *str)
 {
-	int	i;
+	int		i;
+	int		mult;
+	long	nbr;
 
-	i = 0;
-	while (argv[++i])
+	i = ft_strlen(str);
+	mult = 10;
+	nbr = 0;
+	while (i >= 0)
 	{
-		args_checker(argv[i]);
+		if (i == 0)
+		nbr = nbr + (str[i] - '0') * mult;
+		mult *= 10;
+		i--;
 	}
-	range_checker(argv);
-	return (0);
 }

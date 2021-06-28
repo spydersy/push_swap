@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 17:43:08 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/28 20:22:19 by abelarif         ###   ########.fr       */
+/*   Created: 2020/01/09 12:56:00 by abelarif          #+#    #+#             */
+/*   Updated: 2021/06/28 18:06:23 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	push_swap(char *argv[])
+int		ft_isdigit(int c)
 {
-	int	i;
-
-	i = 0;
-	while (argv[++i])
-	{
-		args_checker(argv[i]);
-	}
-	range_checker(argv);
-	return (0);
+	if (c <= 57 && c >= 48)
+		return (1);
+	else
+		return (0);
 }

@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 17:43:08 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/28 20:22:19 by abelarif         ###   ########.fr       */
+/*   Created: 2021/06/28 17:58:25 by abelarif          #+#    #+#             */
+/*   Updated: 2021/06/28 18:02:20 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	push_swap(char *argv[])
+void	ft_error(char *descriptor, int flag)
 {
-	int	i;
-
-	i = 0;
-	while (argv[++i])
-	{
-		args_checker(argv[i]);
-	}
-	range_checker(argv);
-	return (0);
+	write(2, KRED, ft_strlen(KRED));
+	write(2, "ERROR : ", 8);
+	write(2, descriptor, ft_strlen(descriptor));
+	if (flag == 1)
+		exit(EXIT_FAILURE);
 }

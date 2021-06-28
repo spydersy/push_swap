@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abelarif <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 17:43:08 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/28 20:22:19 by abelarif         ###   ########.fr       */
+/*   Created: 2021/06/28 13:39:58 by abelarif          #+#    #+#             */
+/*   Updated: 2021/06/28 13:40:55 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef PUSH_SWAP_H
+#define PUSH_SWAP_H
 
-int	push_swap(char *argv[])
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+typedef struct		s_list
 {
-	int	i;
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
-	i = 0;
-	while (argv[++i])
-	{
-		args_checker(argv[i]);
-	}
-	range_checker(argv);
-	return (0);
-}
+#endif
