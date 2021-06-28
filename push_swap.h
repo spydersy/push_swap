@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelarif <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/10 21:43:12 by abelarif          #+#    #+#             */
-/*   Updated: 2020/01/10 21:43:15 by abelarif         ###   ########.fr       */
+/*   Created: 2021/06/28 13:39:58 by abelarif          #+#    #+#             */
+/*   Updated: 2021/06/28 13:40:55 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PUSH_SWAP_H
+#define PUSH_SWAP_H
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+typedef struct		s_list
 {
-	size_t i;
-	size_t j;
-	size_t k;
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
-	if (*needle == 0)
-		return ((char *)haystack);
-	j = 0;
-	while (j < len && haystack[j])
-	{
-		k = j;
-		i = 0;
-		while (haystack[k] == needle[i] && (j + i) < len)
-		{
-			i++;
-			if (needle[i] == '\0')
-				return ((char *)(haystack + (k - i + 1)));
-			k++;
-		}
-		j++;
-	}
-	return (0);
-}
+#endif
