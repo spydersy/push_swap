@@ -6,7 +6,7 @@
 #    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/07/02 09:51:28 by abelarif         ###   ########.fr        #
+#    Updated: 2021/07/02 13:05:32 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,6 @@ PUSH_SWAP_SRCS=		main.c\
 					push_swap.c\
 
 PARSING_SRCS=	./parsing/to_parsing.c\
-				# ./parsing/cmd_checker.c\
-				# ./parsing/file_checker.c\
-
-# EXECUTION_SRCS=	./execution/to_execution.c\
 
 UTILS_SRCS=		./utils/ft_error.c\
 				./utils/ft_putstr_fd.c\
@@ -27,6 +23,10 @@ UTILS_SRCS=		./utils/ft_error.c\
 				./utils/ft_strlen.c\
 				./utils/ft_isdigit.c\
 				./utils/ft_split.c\
+				./utils/conditions.c\
+				./utils/ft_atoi.c\
+				./utils/checkers.c\
+				./utils/free_stack.c\
 
 SRCS=			$(UTILS_SRCS)\
 				$(PUSH_SWAP_SRCS)\
