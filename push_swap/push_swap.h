@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:53:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/30 19:56:41 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/02 09:49:29 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 
 # define KNRM  "\x1B[0m"
 # define KRED  "\x1B[31m"
@@ -37,6 +38,8 @@ t_stack *to_parsing(int argc, char *argv[]);
 
 int     push_swap(int argc, char *argv[]);
 int		ft_isdigit(int c);
+
+char    **ft_split(char const *s, char c);
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);

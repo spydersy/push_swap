@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 13:11:18 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/30 18:03:08 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/02 10:48:22 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (s)
+	{
 		while (s[i] != '\0')
 		{
 			ft_putchar_fd(s[i], fd);
 			i++;
 		}
+	}
 }

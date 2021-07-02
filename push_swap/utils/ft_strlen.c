@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 14:25:07 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/30 19:25:07 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/02 10:53:05 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (s[i] != '\0')

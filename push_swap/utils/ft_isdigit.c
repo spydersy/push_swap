@@ -6,13 +6,13 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 12:56:00 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/30 19:35:26 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/02 10:47:37 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c <= 57 && c >= 48)
 		return (1);
