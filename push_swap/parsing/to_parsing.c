@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:19:57 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/02 13:09:01 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/02 13:38:28 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,23 @@ t_stack *join_stacks(t_stack *tmp, t_stack *a)
             stack->stack[++i] = tmp->stack[j];
     }
     else
+    {
         return (tmp);
+    }
     free_stack(a);
     free_stack(tmp);
     return (stack);
+}
+
+void    print_stack(t_stack *stack)
+{
+    int i;
+
+    i = -1;
+    while (++i < stack->size)
+    {
+        printf("STACK %d : [%d]\n", i, stack->stack[i]);
+    }
 }
 
 t_stack	*to_parsing(int argc, char *argv[])
@@ -57,6 +70,9 @@ t_stack	*to_parsing(int argc, char *argv[])
     t_stack     *tmp;
 
 	i = 0;
+    a = malloc(sizeof(t_stack) * 1);
+    a->size = 0;
+    a->stack = malloc(sizeof(int) * 1);
 	while (++i < argc)
 	{
     	if (ft_strlen(argv[i]) == 0)
@@ -66,6 +82,7 @@ t_stack	*to_parsing(int argc, char *argv[])
 		tmp = range_checker(argv[i]);
         a = join_stacks(tmp, a);
 	}
+    print_stack(a);
     free_stack(a);
 	return (NULL);
 }

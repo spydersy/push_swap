@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:53:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/02 13:04:46 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/02 13:38:40 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 # define KMAG  "\x1B[35m"
 # define KCYN  "\x1B[36m"
 # define KWHT  "\x1B[37m"
+
+# define	DBG(A)	printf("[%d]\n", A);
 
 typedef struct  s_stack
 {
