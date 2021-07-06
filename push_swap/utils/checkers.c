@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 11:02:35 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/02 12:15:23 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/06 09:57:32 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	alpha_checker(char *arg)
 {
-	int	i;
+	int		i;
 
 	i = -1;
 	while (arg[++i])

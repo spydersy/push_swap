@@ -6,7 +6,7 @@
 #    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/07/06 08:01:23 by abelarif         ###   ########.fr        #
+#    Updated: 2021/07/06 09:13:10 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,10 @@ NAME=push_swap
 PUSH_SWAP_SRCS=		main.c\
 					push_swap.c\
 
-INSTRUCTIONS_SRCS=	./instructions/ft_push.c\
+INSTRUCTIONS_SRCS=	./instructions/ft_swap.c\
+					./instructions/ft_push.c\
 					./instructions/ft_rotate.c\
-					# ./instructions/ft_swap.c\
+					./instructions/ft_reverse_rotate.c\
 					# ./instructions/ft_reverse_rotate.c\
 
 PARSING_SRCS=		./parsing/to_parsing.c\
