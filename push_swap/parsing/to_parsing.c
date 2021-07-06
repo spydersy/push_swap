@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:19:57 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/02 13:38:28 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/06 07:17:24 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,6 @@ t_stack *join_stacks(t_stack *tmp, t_stack *a)
     return (stack);
 }
 
-void    print_stack(t_stack *stack)
-{
-    int i;
-
-    i = -1;
-    while (++i < stack->size)
-    {
-        printf("STACK %d : [%d]\n", i, stack->stack[i]);
-    }
-}
-
 t_stack	*to_parsing(int argc, char *argv[])
 {
 	int		    i;
@@ -82,7 +71,5 @@ t_stack	*to_parsing(int argc, char *argv[])
 		tmp = range_checker(argv[i]);
         a = join_stacks(tmp, a);
 	}
-    print_stack(a);
-    free_stack(a);
-	return (NULL);
+	return (a);
 }

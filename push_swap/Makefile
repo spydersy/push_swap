@@ -6,7 +6,7 @@
 #    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/07/02 13:05:32 by abelarif         ###   ########.fr        #
+#    Updated: 2021/07/06 08:01:23 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,22 +15,32 @@ NAME=push_swap
 PUSH_SWAP_SRCS=		main.c\
 					push_swap.c\
 
-PARSING_SRCS=	./parsing/to_parsing.c\
+INSTRUCTIONS_SRCS=	./instructions/ft_push.c\
+					./instructions/ft_rotate.c\
+					# ./instructions/ft_swap.c\
+					# ./instructions/ft_reverse_rotate.c\
 
-UTILS_SRCS=		./utils/ft_error.c\
-				./utils/ft_putstr_fd.c\
-				./utils/ft_putchar_fd.c\
-				./utils/ft_strlen.c\
-				./utils/ft_isdigit.c\
-				./utils/ft_split.c\
-				./utils/conditions.c\
-				./utils/ft_atoi.c\
-				./utils/checkers.c\
-				./utils/free_stack.c\
+PARSING_SRCS=		./parsing/to_parsing.c\
+
+EXECUTION_SRCS=		./execution/to_execution.c\
+
+UTILS_SRCS=			./utils/ft_atoi.c\
+					./utils/ft_error.c\
+					./utils/checkers.c\
+					./utils/ft_split.c\
+					./utils/ft_strlen.c\
+					./utils/ft_isdigit.c\
+					./utils/free_stack.c\
+					./utils/conditions.c\
+					./utils/ft_putstr_fd.c\
+					./utils/ft_putendl_fd.c\
+					./utils/ft_putchar_fd.c\
 
 SRCS=			$(UTILS_SRCS)\
+				$(PARSING_SRCS)\
 				$(PUSH_SWAP_SRCS)\
-			$(PARSING_SRCS)\
+				$(EXECUTION_SRCS)\
+				$(INSTRUCTIONS_SRCS)\
 
 OBJS=			$(SRCS:.c=.o)
 

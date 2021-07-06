@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 13:05:24 by abelarif          #+#    #+#             */
-/*   Updated: 2020/01/09 15:37:39 by abelarif         ###   ########.fr       */
+/*   Created: 2020/01/09 13:09:28 by abelarif          #+#    #+#             */
+/*   Updated: 2021/07/06 07:23:41 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	unsigned char		*d;
-	unsigned const char *s;
-
-	d = dst;
-	s = src;
-	if (d == 0 && s == 0)
-		return (0);
-	while (n--)
-		*d++ = *s++;
-	return (dst);
+	if (s)
+	{
+		while (*s)
+			ft_putchar_fd(*s++, fd);
+		ft_putchar_fd('\n', fd);
+	}
 }
