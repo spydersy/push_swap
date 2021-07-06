@@ -6,11 +6,30 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 11:02:35 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/06 09:57:32 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/06 16:53:02 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	check_duplicate_numbers(t_stack *a)
+{
+	int		i;
+	int		j;
+
+	i = -1;
+	while (++i < a->size)
+	{
+		j = i;
+		while (++j < a->size)
+		{
+			if (a->stack[i] == a->stack[j])
+			{
+				ft_error("DUPLICATE NUMBER", 1);
+			}
+		}
+	}
+}
 
 int	alpha_checker(char *arg)
 {

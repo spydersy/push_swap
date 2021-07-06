@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:19:57 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/06 09:55:37 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/06 16:49:38 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ t_stack	*to_parsing(int argc, char *argv[])
 		tmp = range_checker(argv[i]);
 		a = join_stacks(tmp, a);
 	}
+	check_duplicate_numbers(a);
 	return (a);
 }

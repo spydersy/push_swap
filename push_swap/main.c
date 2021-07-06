@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:55:09 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/06 05:59:40 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/06 10:19:40 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,5 @@ int	main(int argc, char *argv[])
 	{
 		return (push_swap(argc, argv));
 	}
-	ft_error("ARGS\n", 1);
 	return (-1);
 }
