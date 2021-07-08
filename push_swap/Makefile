@@ -48,7 +48,7 @@ OBJS=			$(SRCS:.c=.o)
 FLAGS=			-Wall -Werror -Wextra
 
 $(NAME): $(OBJS)
-		clang-9 $(FLAGS) $(SRCS) -o $(NAME)
+		clang-9 -g3 $(FLAGS) $(SRCS) -o $(NAME)
 
 all: $(NAME)
 

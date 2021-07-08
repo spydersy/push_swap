@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:53:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/06 16:49:20 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/08 06:49:37 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 typedef struct s_stack
 {
 	int			*stack;
+    int         *sorted;
 	int			size;
 }	t_stack;
 
@@ -60,6 +61,6 @@ size_t			ft_strlen(const char *s);
 t_stack			*to_parsing(int argc, char *argv[]);
 t_stack			*range_checker(char *arg);
 
-void			print_stack(t_stack *stack);
+void			print_stack(t_stack *stack, int flag);
 
 #endif
