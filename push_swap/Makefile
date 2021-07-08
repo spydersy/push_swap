@@ -6,7 +6,7 @@
 #    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/07/08 08:00:17 by abelarif         ###   ########.fr        #
+#    Updated: 2021/07/08 11:23:11 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,11 +38,11 @@ UTILS_SRCS=			./utils/ft_atoi.c\
 					./utils/ft_putendl_fd.c\
 					./utils/ft_putchar_fd.c\
 
-SRCS=			$(UTILS_SRCS)\
-				$(PARSING_SRCS)\
-				$(PUSH_SWAP_SRCS)\
-				$(EXECUTION_SRCS)\
-				$(INSTRUCTIONS_SRCS)\
+SRCS=				$(UTILS_SRCS)\
+					$(PARSING_SRCS)\
+					$(PUSH_SWAP_SRCS)\
+					$(EXECUTION_SRCS)\
+					$(INSTRUCTIONS_SRCS)\
 
 OBJS=			$(SRCS:.c=.o)
 
