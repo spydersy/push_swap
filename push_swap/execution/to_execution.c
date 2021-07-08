@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 06:04:54 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/08 07:23:19 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/08 07:54:06 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void    sort_stack(t_stack **a)
 
     tmp = 0;
     repeat = 1;
-    printf("-------------------------------\n");
     (*a)->sorted = malloc(sizeof(int) * (*a)->size);
     i = -1;
     while (++i < (*a)->size)
@@ -63,6 +62,9 @@ t_stack *index_stack(t_stack *stack)
             }
         }
     }
+    i = -1;
+    while (++i < stack->size)
+        stack->sorted[i] = i;
     return (stack);
 }
 
@@ -76,6 +78,11 @@ int	to_execution(t_stack *a)
 		ft_error("MALLOC", 1);
 	b->size = 0;
     a = index_stack(a);
+    // printf("-------------------------------\noriginal :\n");
+    // print_stack(a, 1);
+    // printf("-------------------------------\nsorted :\n");
+    // print_stack(a, 2);
+    to_sorting(a, b);
 	free_stack(a);
 	free_stack(b);
 	return (0);

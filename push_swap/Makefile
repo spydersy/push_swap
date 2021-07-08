@@ -6,7 +6,7 @@
 #    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/07/06 09:13:10 by abelarif         ###   ########.fr        #
+#    Updated: 2021/07/08 08:00:17 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ INSTRUCTIONS_SRCS=	./instructions/ft_swap.c\
 PARSING_SRCS=		./parsing/to_parsing.c\
 
 EXECUTION_SRCS=		./execution/to_execution.c\
+					./execution/to_sorting.c\
 
 UTILS_SRCS=			./utils/ft_atoi.c\
 					./utils/ft_error.c\

@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:53:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/08 06:49:37 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/08 07:55:09 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void			free_stack(t_stack *stack);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			minus_position_checker(char *str);
+void            to_sorting(t_stack *a, t_stack *b);
 void			check_duplicate_numbers(t_stack *a);
 void			ft_error(char *descriptor, int flag);
 void			ft_putendl_fd(char const *s, int fd);
