@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:53:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/08 07:55:09 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/19 06:55:36 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,12 @@ int				alpha_checker(char *arg);
 int				push_swap(int argc, char *argv[]);
 int				allowd_characters_condition(char c);
 int				minus_position_condition(char *str, int index);
+int	            A_is_sorted(t_stack *a, t_stack *b);
 
 char			**ft_split(char const *s, char c);
 char			**get_content(char *arg);
 
+void        	DONE(t_stack *a, t_stack *b);
 void			free_stack(t_stack *stack);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
@@ -53,6 +55,7 @@ void            to_sorting(t_stack *a, t_stack *b);
 void			check_duplicate_numbers(t_stack *a);
 void			ft_error(char *descriptor, int flag);
 void			ft_putendl_fd(char const *s, int fd);
+void            small_sorting(t_stack *a, t_stack *b);
 void			ft_push(t_stack **src, t_stack **dst, char *stack);
 void			ft_swap(t_stack **a, t_stack **b, char *descriptor);
 void			ft_rotate(t_stack **a, t_stack **b, char *descriptor);

@@ -6,7 +6,7 @@
 #    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/07/08 11:23:11 by abelarif         ###   ########.fr        #
+#    Updated: 2021/07/19 06:38:06 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,12 @@ INSTRUCTIONS_SRCS=	./instructions/ft_swap.c\
 					./instructions/ft_push.c\
 					./instructions/ft_rotate.c\
 					./instructions/ft_reverse_rotate.c\
-					# ./instructions/ft_reverse_rotate.c\
 
 PARSING_SRCS=		./parsing/to_parsing.c\
 
-EXECUTION_SRCS=		./execution/to_execution.c\
-					./execution/to_sorting.c\
+EXECUTION_SRCS=		./execution/to_sorting.c\
+					./execution/to_execution.c\
+					./execution/small_sorting.c\
 
 UTILS_SRCS=			./utils/ft_atoi.c\
 					./utils/ft_error.c\

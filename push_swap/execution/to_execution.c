@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 06:04:54 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/08 07:54:06 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/19 06:32:21 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,6 @@ int	to_execution(t_stack *a)
 		ft_error("MALLOC", 1);
 	b->size = 0;
     a = index_stack(a);
-    // printf("-------------------------------\noriginal :\n");
-    // print_stack(a, 1);
-    // printf("-------------------------------\nsorted :\n");
-    // print_stack(a, 2);
     to_sorting(a, b);
 	free_stack(a);
 	free_stack(b);
