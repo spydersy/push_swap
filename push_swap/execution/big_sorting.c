@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 09:30:03 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/19 11:22:49 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/19 11:41:45 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,18 +65,18 @@ void    get_bits(t_stack *a, t_stack *b, int shift)
             c++;
             i--;
         }
-        printf("\n*****************************\n");
-        print_stack(a, 1);
-        printf("DDDDDDDDDDDDDDDDDDDDDDD\n");
-        print_stack(b, 1);
-        printf("*****************************\n\n");
+        // printf("\n*****************************\n");
+        // print_stack(a, 4);
+        // printf("DDDDDDDDDDDDDDDDDDDDDDD\n");
+        // print_stack(b, 4);
+        // printf("*****************************\n\n");
     }
     i = -1;
     int original_sizeB = b->size;
 
     while (++i < original_sizeB)
     {
-        ft_push(&b, &a, "b");
+        ft_push(&b, &a, "a");
     }
 }
 
@@ -87,21 +87,22 @@ void    big_sorting(t_stack *a, t_stack *b)
 
     i = -1;
     nb_bits = bits_calculator(a);
-    printf("FIRST STACK\n");
-    print_stack(a,1);
-    printf("-----------------------\n");
+    // printf("FIRST STACK\n");
+    // print_stack(a,4);
+    // printf("-----------------------\n");
     while (++i < nb_bits)
     {
-        printf("\n||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
+        // printf("\n||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
         get_bits(a, b, i);
-        printf("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n");
+        // printf("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n");
     }
-    printf("FINAL STACK\n");
-    print_stack(a,1);
-    printf("FFFFFFFFFFF\n");
-    print_stack(b,1);
-    if (A_is_sorted(a, b) == 1)
-        printf("SORTED\n");
+    // print_stack(a,4);
+    DONE(a, b);
+    // printf("FINAL STACK\n");
+    // printf("FFFFFFFFFFF\n");
+    // print_stack(b,4);
+    // if (A_is_sorted(a, b) == 1)
+        // printf("SORTED\n");
 }
 // pb
 // pb
