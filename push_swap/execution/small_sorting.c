@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 06:34:23 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/19 09:18:25 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/19 10:03:38 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,14 +76,17 @@ void    insert_digit(t_stack *src, t_stack *dst, int flag)
     int     element;
     int     insered;
 
+    if (flag)
+    {}
     element = src->stack[0];
     insered = 0;
     if (element == 0)
     {
-        ft_push(src, dst, "a");
+        ft_push(&src, &dst, "a");
         return ;
     }
-    if (element == )
+    if (element == 0)
+    {}
     while (insered == 0)
     {
         if (element < dst->size / 2)

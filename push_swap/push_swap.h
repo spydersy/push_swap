@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:53:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/19 06:55:36 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/19 09:31:35 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void			ft_push(t_stack **src, t_stack **dst, char *stack);
 void			ft_swap(t_stack **a, t_stack **b, char *descriptor);
 void			ft_rotate(t_stack **a, t_stack **b, char *descriptor);
 void			ft_reverse_rotate(t_stack **a, t_stack **b, char *descriptor);
+void    big_sorting(t_stack *a, t_stack *b);
 
 size_t			ft_strlen(const char *s);
 t_stack			*to_parsing(int argc, char *argv[]);
