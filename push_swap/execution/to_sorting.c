@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 07:54:23 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/19 11:47:55 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/26 04:50:47 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ void	DONE(t_stack *a, t_stack *b)
     while (++i < a->size)
     {
         if (a->stack[i] < a->stack[i - 1])
-            ft_error("NOT SORTED", 1);
+        {
+            // ft_error("NOT SORTED", 1);
+        }
     }
 	free(a);
 	free(b);
@@ -51,7 +53,7 @@ void	DONE(t_stack *a, t_stack *b)
 
 void	choice_algorithme(t_stack *a, t_stack *b)
 {
-    if (a->size < 5)
+    if (a->size <= 5)
     {
         small_sorting(a, b);
     }

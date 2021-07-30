@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:53:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/19 09:31:35 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/30 11:51:11 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 typedef struct s_stack
 {
 	int			*stack;
-    int         *sorted;
+	int			*sorted;
 	int			size;
 }	t_stack;
 
@@ -41,31 +41,29 @@ int				alpha_checker(char *arg);
 int				push_swap(int argc, char *argv[]);
 int				allowd_characters_condition(char c);
 int				minus_position_condition(char *str, int index);
-int	            A_is_sorted(t_stack *a, t_stack *b);
 
-char			**ft_split(char const *s, char c);
 char			**get_content(char *arg);
+char			**ft_split(char const *s, char c);
 
-void        	DONE(t_stack *a, t_stack *b);
 void			free_stack(t_stack *stack);
+void			DONE(t_stack *a, t_stack *b);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			minus_position_checker(char *str);
-void            to_sorting(t_stack *a, t_stack *b);
+void			to_sorting(t_stack *a, t_stack *b);
 void			check_duplicate_numbers(t_stack *a);
+void			big_sorting(t_stack *a, t_stack *b);
 void			ft_error(char *descriptor, int flag);
 void			ft_putendl_fd(char const *s, int fd);
-void            small_sorting(t_stack *a, t_stack *b);
+void			small_sorting(t_stack *a, t_stack *b);
 void			ft_push(t_stack **src, t_stack **dst, char *stack);
 void			ft_swap(t_stack **a, t_stack **b, char *descriptor);
 void			ft_rotate(t_stack **a, t_stack **b, char *descriptor);
 void			ft_reverse_rotate(t_stack **a, t_stack **b, char *descriptor);
-void    big_sorting(t_stack *a, t_stack *b);
 
 size_t			ft_strlen(const char *s);
-t_stack			*to_parsing(int argc, char *argv[]);
-t_stack			*range_checker(char *arg);
 
-void			print_stack(t_stack *stack, int flag);
+t_stack			*range_checker(char *arg);
+t_stack			*to_parsing(int argc, char *argv[]);
 
 #endif

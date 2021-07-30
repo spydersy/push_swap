@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:19:57 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/06 16:49:38 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/24 12:31:50 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ t_stack	*join_stacks(t_stack *tmp, t_stack *a)
 
 	i = -1;
 	j = -1;
+    stack = NULL;
 	if (a != NULL)
 	{
 		stack = malloc(sizeof(t_stack) * (1));
 		stack->size = tmp->size + a->size;
-		stack->stack = malloc(sizeof(int) * stack->size);
+		stack->stack = malloc(stack->size * sizeof(int));
 		if (stack->stack == NULL)
 			ft_error("STACK", 1);
 		while (++i < a->size)

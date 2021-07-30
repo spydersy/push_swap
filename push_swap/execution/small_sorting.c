@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 06:34:23 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/19 10:03:38 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/07/30 11:30:22 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,60 +71,35 @@ void    second_insertion(t_stack *src, t_stack *dst)
     }
 }
 
-void    insert_digit(t_stack *src, t_stack *dst, int flag)
+void    insert_digit(t_stack *src, t_stack *dst)
 {
-    int     element;
-    int     insered;
+    int     next_value;
 
-    if (flag)
-    {}
-    element = src->stack[0];
-    insered = 0;
-    if (element == 0)
+
+    if (src->size == 2 && src->stack[0] > src->stack[1])
+    {
+        ft_reverse_rotate(&src, &dst, "b");
+    }
+    if (src->stack[0] == 0)
     {
         ft_push(&src, &dst, "a");
-        return ;
     }
-    if (element == 0)
-    {}
-    while (insered == 0)
+    else if (src->stack[0] == (src->size + dst->size - 1))
     {
-        if (element < dst->size / 2)
+        ft_push(&src, &dst, "a");
+        ft_rotate(&dst, &src,"a");
+    }
+    else
+    {
+        next_value =src->stack[0] + 1;
+        while (dst->stack[0] != next_value)
         {
-            
+            ft_rotate(&dst, &src, "a");
+            // sleep(3);
         }
-        else
-        {
-        
-        }
-    }    
+        ft_push(&src, &dst, "a");
+    }
 }
-
-// void    insert_digit(t_stack *src, t_stack *dst, int flag)
-// {
-//     if (flag == 2)
-//     {
-//         second_insertion(src, dst);
-//     }
-//     else
-//     {
-//         while (1)
-//         {
-//             // print_stack(src, 1);
-//             // printf("**************************\n");
-//             // print_stack(dst, 1);
-//             // sleep(5);
-//             if (is_correct_position(src, dst) == 1)
-//             {
-            
-//                 ft_push(&src, &dst, "a");
-//                 break;
-//             }
-//             else
-//                 ft_rotate(&dst, &src, "a");
-//         }
-//     }
-// }
 
 void	three_digits(t_stack *a, t_stack *b)
 {
@@ -152,10 +127,29 @@ void	three_digits(t_stack *a, t_stack *b)
     }
 }
 
+int     min_of_stack(t_stack *stack)
+{
+    int     i;
+    int     min;
+
+    i = -1;
+    min = stack->stack[0];
+    while (++i < stack->size)
+    {
+        if (stack->stack[i] < min)
+        {
+            min =stack->stack[i];
+        }
+    }
+    return (min);
+}
+
 void    reindex_stack(t_stack *stack, t_stack *other_stack)
 {
     int     zero_position;
+    int     min;
 
+    min = min_of_stack(stack);
     zero_position = -1;
     while (++zero_position < stack->size)
     {
@@ -164,47 +158,175 @@ void    reindex_stack(t_stack *stack, t_stack *other_stack)
     }
     if (zero_position < stack->size / 2)
     {
-        while (stack->stack[0] != 0)
+        while (stack->stack[0] != min)
         {
-            // printf("X\n");
             ft_rotate(&stack, &other_stack, "a");
         }
     }
     else
     {
-        while (stack->stack[0] != 0)
+        while (stack->stack[0] != min)
         {
+            // sleep(3);
+            // print_stack(stack, 1);
             ft_reverse_rotate(&stack, &other_stack, "a");
         }
     }
 }
 
-void    four_five_digits(t_stack *a, t_stack *b)
+void    four_digits(t_stack *a, t_stack *b)
+{
+    if (a->stack[0] < a->stack[1])
+    {
+        ft_swap(&a, &b, "a");
+    }
+    ft_push(&a, &b, "b");
+    three_digits(a, b);
+    insert_digit(b, a);
+    reindex_stack(a, b);
+}
+
+void    push_max(t_stack *a, t_stack *b)
 {
     int     i;
-    int     init_size;
 
     i = -1;
-    init_size = a->size;
-    while (++i < init_size - 3)
+    while (++i < a->size)
     {
-        ft_push(&a, &b, "b");  
+        if (a->stack[i] == a->size - 1)
+            break ;
     }
+    if (i == 1)
+    {
+        ft_rotate(&a, &b, "a");
+    }
+    else if (i == 2)
+    {
+        ft_rotate(&a, &b, "a");
+        ft_rotate(&a, &b, "a");
+    }
+    else if (i == 3)
+    {
+        ft_reverse_rotate(&a, &b, "a");
+        ft_reverse_rotate(&a, &b, "a");
+    }
+    else if (i == 4)
+    {
+        ft_reverse_rotate(&a, &b, "a");
+    }
+    ft_push(&a, &b, "b");
+}
+
+void    first_is_zero(t_stack *a, t_stack *b)
+{
+    if (b->stack[0] == 0 && b->stack[1] > a->stack[2])
+    {
+        ft_push(&b, &a, "a");
+        ft_push(&b, &a, "a");
+        return ;
+    }
+    else if (b->stack[0] == 0 && b->stack[1] == 1)
+    {
+        ft_swap(&a, &b, "b");
+        ft_push(&b, &a, "a");
+        ft_push(&b, &a, "a");
+        return ;
+    }
+    else if (b->stack[0] == 0)
+    {
+        ft_push(&b, &a, "a");
+        if (b->stack[0] == 2)
+        {
+            ft_rotate(&a, &b, "a");
+            ft_rotate(&a, &b, "a");
+        }
+        else if (b->stack[0])
+            ft_reverse_rotate(&a, &b, "a");
+        ft_push(&b, &a, "a");
+    }
+}
+
+void    first_is_four(t_stack *a, t_stack *b)
+{
+    ft_push(&b, &a, "a");
+    if (b->stack[0] == 3)
+    {
+        ft_push(&b, &a, "a");
+    }
+    else if (b->stack[0] == 2)
+    {
+        ft_reverse_rotate(&a, &b, "a");
+        ft_push(&b, &a, "a");
+    }
+    else if (b->stack[0] == 1)
+    {
+        ft_reverse_rotate(&a, &b, "a");
+        ft_reverse_rotate(&a, &b, "a");
+        ft_push(&b, &a, "a");
+    }
+}
+
+void    first_is_three(t_stack *a, t_stack *b)
+{
+    if (b->stack[1] == 2)
+    {
+        ft_reverse_rotate(&a, &b, "a");
+        ft_push(&b, &a, "a");
+        ft_push(&b, &a, "a");
+    }
+    else if (b->stack[1] == 1)
+    {
+        ft_reverse_rotate(&a, &b, "a");
+        ft_push(&b, &a, "a");
+        ft_reverse_rotate(&a, &b, "a");
+        ft_push(&b, &a, "a");
+    }
+}
+
+void    first_is_two(t_stack *a, t_stack *b)
+{
+    ft_rotate(&a, &b, "a");
+    ft_push(&b, &a, "a");
+    ft_push(&b, &a, "a");
+}
+
+void    return_two(t_stack *a, t_stack *b)
+{
+    // printf("-------------------------------\n");
+    // print_stack(a, 1);
+    // printf("*******************************\n");
+    // print_stack(b, 1);
+    // printf("-------------------------------\n");
+    if (b->stack[0] == 0)
+    {
+        first_is_zero(a, b);
+    }
+    else if (b->stack[0] == 4)
+    {
+        first_is_four(a, b);
+    }
+    else if (b->stack[0] == 3)
+    {
+        first_is_three(a, b);
+    }
+    else if (b->stack[0] == 2)
+    {
+        first_is_two(a, b);
+    }
+}
+void    five_digits(t_stack *a, t_stack *b)
+{
+    ft_push(&a, &b, "b");
+    ft_push(&a, &b, "b");
+    if (b->stack[0] < b->stack[1] && b->stack[0] != 0)
+    {
+        ft_swap(&a, &b, "b");
+    }
+    if (b->stack[1] == 0)
+        ft_swap(&a, &b, "b");
     three_digits(a, b);
-    if (init_size == 4)
-    {
-        insert_digit(b, a, 1);
-    }
-    else
-    {
-        if (b->stack[0] > b->stack[1])
-            ft_rotate(&a, &b, "b");
-        insert_digit(b, a, 1);
-        reindex_stack(a, b);
-        insert_digit(b, a, 2);
-    }
-    if (A_is_sorted(a, b) == 0)
-        reindex_stack(a, b);
+    return_two(a, b);
+    reindex_stack(a, b);
 }
 
 void    small_sorting(t_stack *a, t_stack *b)
@@ -218,8 +340,12 @@ void    small_sorting(t_stack *a, t_stack *b)
     {
 		three_digits(a, b);
     }
-    else if (a->size == 4 || a->size == 5)
+    else if (a->size == 4)
     {
-        four_five_digits(a, b);
+        four_digits(a, b);
+    }
+    else if (a->size == 5)
+    {
+        five_digits(a, b);
     }
 }
