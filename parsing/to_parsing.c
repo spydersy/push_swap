@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:19:57 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/24 12:31:50 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/08/01 18:05:06 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_stack	*join_stacks(t_stack *tmp, t_stack *a)
 
 	i = -1;
 	j = -1;
-    stack = NULL;
+	stack = NULL;
 	if (a != NULL)
 	{
 		stack = malloc(sizeof(t_stack) * (1));

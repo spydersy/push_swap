@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 08:59:07 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/19 11:36:03 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/08/01 18:02:26 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,38 +51,16 @@ void	ft_push(t_stack **src, t_stack **dst, char *stack)
 	ft_putendl_fd(stack, 1);
 }
 
-void    print_bin0(int nbr)
+void	print_bin0(int nbr)
 {
-    if (nbr == 0)
-        printf("0");
+	if (nbr == 0)
+		printf("0");
 	while (nbr)
 	{
 		if (nbr & 1)
-            printf("1");
+			printf("1");
 		else
-            printf("0");
+			printf("0");
 		nbr >>= 1;
 	}
-}
-
-void	print_stack(t_stack *stack, int flag)
-{
-	int		i;
-
-	i = -1;
-	while (++i < stack->size)
-	{
-        if (flag == 2)
-		    printf("SORTED ELEMENT[%d] : [%d]\n", i, stack->sorted[i]);
-	    if (flag == 1)
-		    printf(" STACK ELEMENT[%d] : [%d]\n", i, stack->stack[i]);
-    	if (flag == 3)
-		    printf(" STACK [%d] : [%5d] | [%5d]\n", i, stack->stack[i], stack->sorted[i]);
-        if (flag == 4)
-        {            
-		    printf("SORTED ELEMENT[%d] : [%d],[", i, stack->stack[i]);
-            print_bin0(stack->stack[i]);
-            printf("]\n");
-        }
-    }
 }

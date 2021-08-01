@@ -5,22 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 17:43:08 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/18 14:53:25 by abelarif         ###   ########.fr       */
+/*   Created: 2021/06/30 18:06:51 by abelarif          #+#    #+#             */
+/*   Updated: 2021/07/06 09:43:44 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	push_swap(char *argv[])
+int	push_swap(int argc, char *argv[])
 {
-	int	i;
+	t_stack		*stack_a;
 
-	i = 0;
-	while (argv[++i])
-	{
-		args_checker(argv[i]);
-	}
-	range_checker(argv);
+	stack_a = to_parsing(argc, argv);
+	return (to_execution(stack_a));
 	return (0);
 }

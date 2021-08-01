@@ -6,7 +6,7 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 07:54:23 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/26 04:50:47 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/08/01 18:11:08 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,33 +34,21 @@ int	A_is_sorted(t_stack *a, t_stack *b)
 
 void	DONE(t_stack *a, t_stack *b)
 {
-    int i;
-
-    i = 0;
-    if (b->size != 0)
-        ft_error("STACK B NOT EMPTY", 1);
-    while (++i < a->size)
-    {
-        if (a->stack[i] < a->stack[i - 1])
-        {
-            // ft_error("NOT SORTED", 1);
-        }
-    }
-	free(a);
-	free(b);
+	free_stack(a);
+	free_stack(b);
 	exit(EXIT_SUCCESS);
 }
 
 void	choice_algorithme(t_stack *a, t_stack *b)
 {
-    if (a->size <= 5)
-    {
-        small_sorting(a, b);
-    }
-    else
-    {
-        big_sorting(a, b);
-    }
+	if (a->size <= 5)
+	{
+		small_sorting(a, b);
+	}
+	else
+	{
+		big_sorting(a, b);
+	}
 }
 
 void	to_sorting(t_stack *a, t_stack *b)
@@ -69,5 +57,5 @@ void	to_sorting(t_stack *a, t_stack *b)
 		DONE(a, b);
 	else
 		choice_algorithme(a, b);
-    DONE(a, b);
+	DONE(a, b);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+         #
+#    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:38:27 by abelarif          #+#    #+#              #
-#    Updated: 2021/06/28 18:09:19 by abelarif         ###   ########.fr        #
+#    Updated: 2021/08/01 18:30:58 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,22 +15,45 @@ NAME=push_swap
 PUSH_SWAP_SRCS=		main.c\
 					push_swap.c\
 
-PARSING_SRCS=	./parsing/args_checker.c\
+INSTRUCTIONS_SRCS=	./instructions/ft_swap.c\
+					./instructions/ft_push.c\
+					./instructions/ft_rotate.c\
+					./instructions/ft_reverse_rotate.c\
 
-UTILS_SRCS=		./utils/ft_error.c\
-				./utils/ft_isdigit.c\
-				./utils/ft_strlen.c\
+PARSING_SRCS=		./parsing/to_parsing.c\
 
-SRCS=			$(PARSING_SRCS)\
-				$(UTILS_SRCS)\
-				$(PUSH_SWAP_SRCS)\
+EXECUTION_SRCS=		./execution/to_sorting.c\
+					./execution/big_sorting.c\
+					./execution/five_digits.c\
+					./execution/to_execution.c\
+					./execution/small_sorting.c\
+
+UTILS_SRCS=			./utils/ft_atoi.c\
+					./utils/ft_error.c\
+					./utils/checkers.c\
+					./utils/ft_split.c\
+					./utils/ft_strlen.c\
+					./utils/ft_isdigit.c\
+					./utils/free_stack.c\
+					./utils/conditions.c\
+					./utils/ft_putstr_fd.c\
+					./utils/ft_putendl_fd.c\
+					./utils/ft_putchar_fd.c\
+					./utils/reindex_stack.c\
+					./utils/min_of_stack.c\
+
+SRCS=				$(UTILS_SRCS)\
+					$(PARSING_SRCS)\
+					$(PUSH_SWAP_SRCS)\
+					$(EXECUTION_SRCS)\
+					$(INSTRUCTIONS_SRCS)\
 
 OBJS=			$(SRCS:.c=.o)
 
 FLAGS=			-Wall -Werror -Wextra
 
-$(NAME): 
-		gcc -g3 $(FLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(OBJS)
+		clang-9 -g3 $(FLAGS) $(SRCS) -o $(NAME)
 
 all: $(NAME)
 
@@ -43,4 +66,4 @@ fclean: clean
 re: fclean all
 
 fsanitize: fclean $(OBJS)
-		gcc $(FLAGS) -g3 -fsanitize=address $(SRCS) -o $(NAME)
+		clang-9 $(FLAGS) -g3 -fsanitize=address $(SRCS) -o $(NAME)

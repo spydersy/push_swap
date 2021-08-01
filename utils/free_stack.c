@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 13:39:58 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/28 13:40:55 by abelarif         ###   ########.fr       */
+/*   Created: 2021/07/02 13:03:56 by abelarif          #+#    #+#             */
+/*   Updated: 2021/08/01 19:11:37 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "../push_swap.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-typedef struct		s_list
+void	free_stack(t_stack *stack)
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
-
-#endif
+	free(stack->stack);
+	free(stack->sorted);
+	stack->stack = NULL;
+	stack->sorted = NULL;
+	free(stack);
+	stack = NULL;
+}

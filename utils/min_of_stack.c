@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   min_of_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 14:25:07 by abelarif          #+#    #+#             */
-/*   Updated: 2021/07/02 10:53:05 by abelarif         ###   ########.fr       */
+/*   Created: 2021/08/01 19:00:41 by abelarif          #+#    #+#             */
+/*   Updated: 2021/08/01 19:04:21 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-size_t	ft_strlen(const char *s)
+int	min_of_stack(t_stack *stack)
 {
 	int		i;
+	int		min;
 
-	i = 0;
-	while (s[i] != '\0')
+	i = -1;
+	min = stack->stack[0];
+	while (++i < stack->size)
 	{
-		i++;
+		if (stack->stack[i] < min)
+		{
+			min = stack->stack[i];
+		}
 	}
-	return (i);
+	return (min);
 }

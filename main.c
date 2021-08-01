@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abelarif <abelarif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 17:41:22 by abelarif          #+#    #+#             */
-/*   Updated: 2021/06/28 18:10:42 by abelarif         ###   ########.fr       */
+/*   Created: 2021/06/30 17:55:09 by abelarif          #+#    #+#             */
+/*   Updated: 2021/07/06 10:19:40 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 int	main(int argc, char *argv[])
 {
-	if (argc > 1)
+	if (argc != 1)
 	{
-		return (push_swap(argv));
+		return (push_swap(argc, argv));
 	}
-	ft_error("ARGS\n", 1);
 	return (-1);
 }
